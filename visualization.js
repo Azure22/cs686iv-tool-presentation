@@ -40,8 +40,9 @@ function drawChart() {
   //First, you may choose a representation to show your data, so we use ColumnChart here.
   //Second, you may need somewhere to put your chart.
   //Therefore, we use HTML DOM method document.getElementById() to get the div and put our chart there.
+  
   var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
-
+	
   //In the end, let combine all these together to show the visualization on the html!
   chart.draw(data, options);
 }

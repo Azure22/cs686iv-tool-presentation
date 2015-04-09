@@ -1,3 +1,4 @@
+google.load("visualization", "1", {packages: ["corechart"]});
 google.setOnLoadCallback(drawMap);
 
 function drawMap() {
@@ -16,8 +17,12 @@ function drawMap() {
 		['Russia', 'Russia: 146,019,512'],
 		['Japan', 'Japan: 127,120,000']
 	];
-
+	
+	var data = google.visualization.arrayToDataTable(d);
+	
 	var options = { showTip: true };
-
-	var map = new google.visualization.Map();
+	
+	var map = new google.visualization.Map(document.getElementById('chart_div'));
+	
+	map.draw(data, options);
 };
